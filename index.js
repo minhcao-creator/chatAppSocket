@@ -1,6 +1,6 @@
 const { Server } = require("socket.io");
 
-const io = new Server({ cors: "http://localhost:5173" });
+const io = new Server({ cors: "https://glowing-babka-466db7.netlify.app/" });
 let onlineUsers = []
 
 io.on("connection", (socket) => {
@@ -14,7 +14,7 @@ io.on("connection", (socket) => {
                 socketId: socket.id
             })
         // console.log("onlineUsers", onlineUsers)
-        
+
         io.emit("getOnlineUsers", onlineUsers)
     })
 
